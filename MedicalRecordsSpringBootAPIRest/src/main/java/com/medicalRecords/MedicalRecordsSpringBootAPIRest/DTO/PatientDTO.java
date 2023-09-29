@@ -15,10 +15,10 @@ import java.util.Set;
 
 public class PatientDTO {
 
-    private long id;
+    private Long id;
     @NotEmpty
     @Size(min = 6,message = "Patient id should have at least 6 digits")
-    private long numId;
+    private Long numId;
     @NotEmpty
     @Size(min = 5,message = "Patient name should have at least 5 characters")
     private String name;
@@ -39,7 +39,7 @@ public class PatientDTO {
 
     private Set<RecordMedical> recordMedicals;
 
-    public PatientDTO(long id , long numId, String name, String lastName, char sex, Date birthdate
+    public PatientDTO(Long id , Long numId, String name, String lastName, char sex, Date birthdate
             , String address, String phone) {
         this.id = id;
         this.numId = numId;
@@ -55,7 +55,7 @@ public class PatientDTO {
         super();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -63,7 +63,7 @@ public class PatientDTO {
         this.id = id;
     }
 
-    public long getNumId() {
+    public Long getNumId() {
         return numId;
     }
 

@@ -9,7 +9,7 @@ import java.util.Date;
 public class RecordMedicalDTO {
 
 
-    private long id;
+    private Long id;
     @NotEmpty(message = "Record date can't be empty")
     private Date recordDate;
     private String familyHistory;
@@ -35,7 +35,7 @@ public class RecordMedicalDTO {
         this.medicinalPrescription = medicinalPrescription;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

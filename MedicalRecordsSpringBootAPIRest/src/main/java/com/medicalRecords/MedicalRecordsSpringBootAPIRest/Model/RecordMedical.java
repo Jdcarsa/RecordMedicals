@@ -9,7 +9,7 @@ public class RecordMedical {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long recordMedicalId;
+    private Long recordMedicalId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "numId", nullable = false)
     private Patient patient;
@@ -42,10 +42,11 @@ public class RecordMedical {
     public RecordMedical() {
     }
 
-    public RecordMedical(Patient patient, Date recordDate, String familyHistory,
+    public RecordMedical(Patient patient,Long recordMedicalId, Date recordDate, String familyHistory,
                          String personalHistory, String reasonConsult,
                          String allergies, String medicinalPrescription) {
         this.patient = patient;
+        this.recordMedicalId = recordMedicalId;
         this.recordDate = recordDate;
         this.familyHistory = familyHistory;
         this.personalHistory = personalHistory;
@@ -54,11 +55,11 @@ public class RecordMedical {
         this.medicinalPrescription = medicinalPrescription;
     }
 
-    public long getId() {
+    public Long getId() {
         return recordMedicalId;
     }
 
-    public void setrecordMedicalId(long recordMedicalId) {
+    public void setRecordMedicalId(long recordMedicalId) {
         this.recordMedicalId = recordMedicalId;
     }
 

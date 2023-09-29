@@ -14,11 +14,11 @@ public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long patientId;
+    private Long patientId;
 
 
     @Column(name = "numId", nullable = false)
-    private long numId;
+    private Long numId;
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "lastName", nullable = false)
@@ -38,9 +38,8 @@ public class Patient {
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<RecordMedical> recordMedicals = new HashSet<>();
 
-    public Patient(long id,long numId, String name, String lastName, char sex, Date birthdate
+    public Patient(Long numId, String name, String lastName, char sex, Date birthdate
             , String address, String phone) {
-        this.patientId = id;
         this.numId = numId;
         this.name = name;
         this.lastName = lastName;
@@ -53,15 +52,15 @@ public class Patient {
     public Patient() {
     }
 
-    public long getId() {
+    public Long getId() {
         return patientId;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.patientId = patientId;
     }
 
-    public long getNumId() {
+    public Long getNumId() {
         return numId;
     }
 
