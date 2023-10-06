@@ -1,7 +1,7 @@
 package com.medicalRecords.MedicalRecordsSpringBootAPIRest.DTO;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.medicalRecords.MedicalRecordsSpringBootAPIRest.Model.RecordMedical;
+import com.medicalRecords.MedicalRecordsSpringBootAPIRest.DTO.RecordMedicalDTO;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
@@ -37,7 +37,7 @@ public class PatientDTO {
     @Size(min = 8,message = "The patient's phone should have at least 8 digits")
     private String phone;
 
-    private Set<RecordMedical> recordMedicals;
+    private Set<RecordMedicalDTO> recordMedicals;
 
     public PatientDTO(Long id , Long numId, String name, String lastName, char sex, Date birthdate
             , String address, String phone) {
@@ -120,11 +120,11 @@ public class PatientDTO {
     }
 
 
-    public Set<RecordMedical> getRecordMedicals() {
+    public Set<RecordMedicalDTO> getRecordMedicals() {
         return recordMedicals;
     }
 
-    public void setRecordMedicals(Set<RecordMedical> recordMedicals) {
+    public void setRecordMedicals(Set<RecordMedicalDTO> recordMedicals) {
         this.recordMedicals = recordMedicals;
     }
 }
