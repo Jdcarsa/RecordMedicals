@@ -26,7 +26,7 @@ public class PatientDTO {
     @Size(min = 5,message = "Patient last name should have at least 5 characters")
     private String lastName;
     @NotEmpty
-    @Size(min = 5,message = "The patient's gender  must be F OR M")
+    @Size(message = "The patient's gender  must be F OR M")
     private char sex;
     @NotEmpty
     private Date birthdate;

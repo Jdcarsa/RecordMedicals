@@ -60,7 +60,7 @@ public class PatientServiceImp implements PatientService{
         responsePatients.setTotalElements(patients.getTotalElements());
         responsePatients.setTotalPages(patients.getTotalPages());
         responsePatients.setLast(patients.isLast());
-        return null;
+        return responsePatients;
     }
     @Override
     public PatientDTO getPatientById(Long patientId) {

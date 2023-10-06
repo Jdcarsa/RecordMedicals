@@ -24,7 +24,6 @@ public class Patient {
     @Column(name = "lastName", nullable = false)
     private String lastName;
     @Column(name = "sex", nullable = false)
-    @Pattern(regexp = "[FM]")
     private char sex;
     @Column(name = "birthDate", nullable = false)
     private Date birthdate;

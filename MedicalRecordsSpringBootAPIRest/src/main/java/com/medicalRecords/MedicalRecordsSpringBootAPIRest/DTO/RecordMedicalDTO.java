@@ -3,6 +3,7 @@ package com.medicalRecords.MedicalRecordsSpringBootAPIRest.DTO;
 import com.medicalRecords.MedicalRecordsSpringBootAPIRest.Model.Patient;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Date;
 
@@ -10,7 +11,7 @@ public class RecordMedicalDTO {
 
 
     private Long id;
-    @NotEmpty(message = "Record date can't be empty")
+    @NotNull(message = "Record date can't be empty")
     private Date recordDate;
     private String familyHistory;
     private String personalHistory;
