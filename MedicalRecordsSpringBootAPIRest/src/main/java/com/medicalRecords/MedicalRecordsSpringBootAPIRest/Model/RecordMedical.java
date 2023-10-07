@@ -11,7 +11,7 @@ public class RecordMedical {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long recordMedicalId;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "numId", nullable = false)
+    @JoinColumn(name = "patientId", nullable = false)
     private Patient patient;
 
 
@@ -42,11 +42,10 @@ public class RecordMedical {
     public RecordMedical() {
     }
 
-    public RecordMedical(Patient patient,Long recordMedicalId, Date recordDate, String familyHistory,
+    public RecordMedical(Patient patient, Date recordDate, String familyHistory,
                          String personalHistory, String reasonConsult,
                          String allergies, String medicinalPrescription) {
         this.patient = patient;
-        this.recordMedicalId = recordMedicalId;
         this.recordDate = recordDate;
         this.familyHistory = familyHistory;
         this.personalHistory = personalHistory;

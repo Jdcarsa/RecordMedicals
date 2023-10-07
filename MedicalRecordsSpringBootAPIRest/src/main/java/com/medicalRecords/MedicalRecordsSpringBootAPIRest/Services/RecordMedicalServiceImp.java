@@ -31,7 +31,7 @@ public class RecordMedicalServiceImp implements RecordMedicalService{
     public RecordMedicalDTO createRecordMedical(Long patientId, RecordMedicalDTO rDTO) {
         Patient p = this.patientRepository.findById(patientId).
                 orElseThrow(()-> new ResourceNotFoundException("Patient","id",patientId));
-        RecordMedical rM =new RecordMedical(p,rDTO.getId(),rDTO.getRecordDate()
+        RecordMedical rM =new RecordMedical(p,rDTO.getRecordDate()
                 , rDTO.getFamilyHistory(),rDTO.getPersonalHistory(),rDTO.getReasonConsult()
                 ,rDTO.getReasonConsult(),rDTO.getMedicinalPrescription());
         RecordMedical newRM = medicalRepository.save(rM);
@@ -99,7 +99,7 @@ public class RecordMedicalServiceImp implements RecordMedicalService{
         RecordMedical rm = this.medicalRepository.findById(recordMedicalId).
                 orElseThrow(()-> new ResourceNotFoundException("Record Medical","id",recordMedicalId));
 
-        if(! rm.getPatient().getId().equals(p.getId())){
+        if(!rm.getPatient().getId().equals(p.getId())){
             throw new MedicalRecordsAppException(HttpStatus.BAD_REQUEST,
                     "Record medical does not belong to patient");
         }
